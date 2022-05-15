@@ -1,0 +1,253 @@
+body {
+  background: black;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  font-family: "Anton", sans-serif;
+  justify-content: center;
+  align-items: center;
+}
+
+div {
+  transform-style: preserve-3d;
+}
+
+.surface {
+  backface-visibility: hidden;
+}
+
+.camera.-x {
+  transform: rotateX(-45deg);
+}
+.camera.-y {
+  animation: rotateY 20000ms linear infinite reverse;
+}
+@keyframes rotateY {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+.anywhere-door:hover .body .door {
+  transform: rotateY(-70deg);
+  transition-delay: 100ms;
+}
+.anywhere-door:hover .body .door .handle {
+  transform: rotateZ(135deg);
+  transition-delay: 0ms;
+}
+.anywhere-door .stuck {
+  position: relative;
+  width: 240px;
+  height: 30px;
+}
+.anywhere-door .stuck .surface {
+  position: absolute;
+}
+.anywhere-door .stuck .surface.-front {
+  width: 240px;
+  height: 30px;
+  transform: translateZ(15px);
+  background: #f7489c;
+}
+.anywhere-door .stuck .surface.-back {
+  width: 240px;
+  height: 30px;
+  transform: rotateY(180deg) translateZ(15px);
+  background: #cf3d83;
+}
+.anywhere-door .stuck .surface.-top {
+  width: 240px;
+  height: 30px;
+  transform: rotateX(90deg) translateZ(15px);
+  background: #eb4594;
+}
+.anywhere-door .stuck .surface.-bottom {
+  width: 240px;
+  height: 30px;
+  transform: rotateX(-90deg) translateZ(15px);
+  background: #ab326c;
+}
+.anywhere-door .stuck .surface.-left {
+  width: 30px;
+  height: 30px;
+  transform: rotateY(-90deg) translateZ(15px);
+  background: #bf3878;
+}
+.anywhere-door .stuck .surface.-right {
+  width: 30px;
+  height: 30px;
+  transform: rotateY(90deg) translateZ(225px);
+  background: #bf3878;
+}
+.anywhere-door .body {
+  position: relative;
+  width: 240px;
+  height: 300px;
+}
+.anywhere-door .body .door {
+  position: absolute;
+  left: 30px;
+  transform-origin: 0 150px 10px;
+  transition: 1000ms cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.anywhere-door .body .door .handle {
+  position: absolute;
+  top: 155px;
+  left: 150px;
+  transform-origin: 10px 10px;
+  transition: 300ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition-delay: 800ms;
+}
+.anywhere-door .body .door .handle .surface {
+  position: absolute;
+}
+.anywhere-door .body .door .handle .surface.-front {
+  width: 20px;
+  height: 20px;
+  transform: translateZ(30px);
+  background: #EDEDED;
+}
+.anywhere-door .body .door .handle .surface.-back {
+  width: 20px;
+  height: 20px;
+  transform: rotateY(180deg) translateZ(30px);
+  background: #EDEDED;
+}
+.anywhere-door .body .door .handle .surface.-top {
+  width: 20px;
+  height: 60px;
+  transform: rotateX(90deg) translateZ(30px);
+  background: #FFFFFF;
+}
+.anywhere-door .body .door .handle .surface.-bottom {
+  width: 20px;
+  height: 60px;
+  transform: rotateX(-90deg) translateZ(-10px);
+  background: #A3A3A3;
+}
+.anywhere-door .body .door .handle .surface.-left {
+  width: 60px;
+  height: 20px;
+  transform: rotateY(-90deg) translateZ(30px);
+  background: #D3D3D3;
+}
+.anywhere-door .body .door .handle .surface.-right {
+  width: 60px;
+  height: 20px;
+  transform: rotateY(90deg) translateZ(-10px);
+  background: #D3D3D3;
+}
+.anywhere-door .body .door .material .surface {
+  position: absolute;
+}
+.anywhere-door .body .door .material .surface.-front {
+  width: 180px;
+  height: 300px;
+  transform: translateZ(10px);
+  background: #f7489c;
+}
+.anywhere-door .body .door .material .surface.-back {
+  width: 180px;
+  height: 300px;
+  transform: rotateY(180deg) translateZ(10px);
+  background: #cf3d83;
+}
+.anywhere-door .body .door .material .surface.-top {
+  width: 180px;
+  height: 20px;
+  transform: rotateX(90deg) translateZ(10px);
+  background: #eb4594;
+}
+.anywhere-door .body .door .material .surface.-bottom {
+  width: 180px;
+  height: 20px;
+  transform: rotateX(-90deg) translateZ(290px);
+  background: #ab326c;
+}
+.anywhere-door .body .door .material .surface.-left {
+  width: 20px;
+  height: 300px;
+  transform: rotateY(-90deg) translateZ(10px);
+  background: #bf3878;
+}
+.anywhere-door .body .door .material .surface.-right {
+  width: 20px;
+  height: 300px;
+  transform: rotateY(90deg) translateZ(170px);
+  background: #bf3878;
+}
+.anywhere-door .body .door .material .hole {
+  position: absolute;
+  left: 5px;
+  top: 150px;
+  width: 10px;
+  height: 30px;
+  background: #000;
+  border-radius: 99px;
+  border: 1px solid #fff;
+}
+.anywhere-door .body .door .material .hinge {
+  position: absolute;
+  right: 0;
+  width: 10px;
+  height: 20px;
+  background: #322;
+}
+.anywhere-door .body .door .material .hinge.-top {
+  top: 30px;
+}
+.anywhere-door .body .door .material .hinge.-bottom {
+  bottom: 30px;
+}
+.anywhere-door .body .pole {
+  position: absolute;
+}
+.anywhere-door .body .pole.-left {
+  left: 10px;
+}
+.anywhere-door .body .pole.-right {
+  right: 30px;
+}
+.anywhere-door .body .pole .hinge {
+  position: absolute;
+  left: 0;
+  width: 10px;
+  height: 20px;
+  background: #322;
+}
+.anywhere-door .body .pole .hinge.-top {
+  top: 30px;
+}
+.anywhere-door .body .pole .hinge.-bottom {
+  bottom: 30px;
+}
+.anywhere-door .body .pole .surface {
+  position: absolute;
+}
+.anywhere-door .body .pole .surface.-front {
+  width: 20px;
+  height: 300px;
+  transform: translateZ(10px);
+  background: #f7489c;
+}
+.anywhere-door .body .pole .surface.-back {
+  width: 20px;
+  height: 300px;
+  transform: rotateY(180deg) translateZ(10px);
+  background: #cf3d83;
+}
+.anywhere-door .body .pole .surface.-left {
+  width: 20px;
+  height: 300px;
+  transform: rotateY(-90deg) translateZ(10px);
+  background: #bf3878;
+}
+.anywhere-door .body .pole .surface.-right {
+  width: 20px;
+  height: 300px;
+  transform: rotateY(90deg) translateZ(10px);
+  background: #bf3878;
+}
